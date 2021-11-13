@@ -1,0 +1,16 @@
+/* Selector */
+p {
+  color: rgb(83, 83, 214);
+  font-size: 30px;
+}
+
+/* class */
+.parrafo {
+  color: red;
+}
+
+/* ID */
+#texto {
+  color: yellow;
+  font-size: 24px;
+}
