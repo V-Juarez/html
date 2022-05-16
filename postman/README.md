@@ -354,11 +354,92 @@ Ejemplo para la siguiente url se muestra un resultado
 
 ## Llamados a un API con el método post utilizando JSON
 
+1er Paso: Ver documentación y mirar como autenticarnos [con un user y password]
 
+2do Paso:El endpoint de la API en este caso es un espacio netamente para la generación de tokens de acceso, el cual seria …/api/api-token-auth/
+
+3er Paso: Agrega el user y la contraseña por medio de JSON en Postman teniendo seleccionado POST(al lado izquierdo de la url) y abajo vas a body>raw>text>JSON(esta opción se despliega si le das click a text en el nivel del menú que se encuentra raw)
+
+4to Paso: Verifica en Header el tipo de contenido que se va a enviar al servidor, en este caso es Key[Content-Key]-Value[application/json] ✔️(listo)
+
+5to paso: Escribe dentro de una llave el user y el password, todo va entre comillas, esto retornara un token (lo usaremos en el siguiente paso)
+
+6to paso:Si queremos agregar al servidor a un comentario tienes que poner el Headers el token del anterior paso, esto se hace añadiendo un espacio en el Headers de donde vamos a realizar el comentario** entonces, vamos a Headers y ponemos KEY=[Authorization] y el VALUE =[token *aquí va el token*]//Esta es la manera de tener acceso a esta API
+
+7to paso: Ya hecho el anterior paso con el endpoint …api/coments/ y en el body>raw>JSON podremos poner un coment especificado su destino con la palabra material, en este caso esa es la palabra clave para identificar en qué sección irá este cometnario.
+
+API:
+https://reqres.in/api/post
+esta API si funciona y permite hacer GET y POST:
+Aqui muestro mis screnshots de los metodos:
+
+1. POST (para registrarse)
+
+   https://reqres.in/api/register
+
+![postman1.jpg](https://static.platzi.com/media/user_upload/postman1-9abf603f-1102-48a9-902f-39994fc2c77b.jpg)
+
+1. POST (para autenticarse)
+
+   https://reqres.in/api/login
+
+![postman1a.jpg](https://static.platzi.com/media/user_upload/postman1a-6fd96093-31f7-4e2b-b0f2-4fc46931a900.jpg)
+
+1. POST (para hacer un comentario)
+
+   https://reqres.in/api/post
+
+   ![postman2.jpg](https://static.platzi.com/media/user_upload/postman2-7138c8c4-2af8-4be9-bcb6-9b453c4c3a6f.jpg)
+
+#### Reto realizado:
+
+**1. Mediante x-www-form-urlencoded**
+![img](https://i.ibb.co/dg8PPcM/Postman-tarea-1.png)
+
+**2. Mediante form-data
+
+![img](https://i.ibb.co/yn4frmd/Postman-tarea-2.png)
 
 ## Llamados a un API con el método post utilizando Form Data
 
+Resumen de clase:
+Los llamados a un API usando el método POST pueden hacerse de varias maneras.
 
+1. Enviando información en **formato JSON **(visto en la clase anterior)
+2. Usando el método **x www form urlencoded** (en cuyo caso, la URL envía la información)
+3. Utilizando el método **form-data** (que sirve especialmente para subir archivos sin necesidad de haberlos pasado a Base24)
+
+Para ver las diferencias entre métodos, es muy útil consultar la consola que tiene el propio Postman (la versión RAW porque la “Pretty” omite detalles).
+
+![](![2021-10-09_19h35_10.png](https://static.platzi.com/media/user_upload/2021-10-09_19h35_10-1e5c030f-1c09-405e-a18e-6fe96fb4deed.jpg)
+
+```json
+<code> 
+"id": 5,
+    "name": "Curso Automation",
+    "description": "Con este curso aprenderas sobre automatizacion",
+    "teachers": [
+        {
+            "id": 6,
+            "name": "Isilreiberth Perez",
+            "description": "Tester QA",
+            "current_job": "Funder",
+            "created_at": "2021-10-09T22:28:34.688717Z",
+            "updated_at": "2021-10-09T22:28:34.688726Z"
+        },
+        {
+            "id": 7,
+            "name": "Williams Hidalgo",
+            "description": "Tester Automation",
+            "current_job": "Tech Leader",
+            "created_at": "2021-10-09T22:28:34.692834Z",
+            "updated_at": "2021-10-09T22:28:34.692850Z"
+        }
+    ],
+    "ranking": "0.00",
+    "created_at": "2021-10-09T22:28:34.687177Z",
+    "updated_at": "2021-10-09T22:28:34.687199Z"
+```
 
 ## Llamados a un API con el método PUT
 
