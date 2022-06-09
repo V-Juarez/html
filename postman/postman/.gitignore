@@ -1,5 +1,6 @@
 data/
 badges/
-project/
-project
+project/composeexample/
+project/courses
+project/migrations
 *.pyc
